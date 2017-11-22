@@ -1,2 +1,2 @@
-new Vue({el:"#app",data:{title:"Morsels"}}),Vue.component("header",{template:"<header>Welcome!</header>"});
+new Vue({el:"#app",template:"<hero></hero>",data:{}}),Vue.component("hero",{template:"<header><h1>{{ welcome }}</h1></header>",data:function(){return{welcome:"Welcome to Morsels!"}}});
 //# sourceMappingURL=learnwithmorsels.github.io.js.map
