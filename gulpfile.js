@@ -1,7 +1,6 @@
 "use strict";
 
-const fs = require( 'fs' ),
-    gulp = require( 'gulp' ),
+const gulp = require( 'gulp' ),
     sass = require( 'gulp-sass' ),
     concat = require( 'gulp-concat' ),
     rename = require( 'gulp-rename' ),
@@ -24,13 +23,19 @@ gulp.task( 'scss', () => {
 
 gulp.task( 'js', () => {
     return gulp.src( [
-            './js/src/**/*.js'
+            './js/src/components/*.js',
+            './js/src/app.js'
         ] )
         .pipe( sourcemaps.init() )
-        .pipe( concat( 'learnwithmorsels.github.io.js' ) )
+        .pipe( concat( 'learnwithmorsels.github.io.js', {newLine: ';'} ) )
         .pipe( uglify() )
         .pipe( sourcemaps.write( './' ) )
         .pipe( gulp.dest( './js' ) );
+} );
+
+gulp.task( 'dev', ['default'], () => {
+    gulp.watch( './css/src/**/*.scss', ['scss'] );
+    gulp.watch( './js/src/**/*.js', ['js'] );
 } );
 
 gulp.task( 'default', ['scss', 'js'] );
