@@ -53,7 +53,7 @@ gulp.task( 'scss', () => {
             } )
         )
         .pipe( sourcemaps.write( './' ) )
-        .pipe( gulp.dest( './docs' ) );
+        .pipe( gulp.dest( './css' ) );
 } );
 
 gulp.task( 'default', ['scss'] );
