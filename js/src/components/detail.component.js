@@ -1,9 +1,9 @@
 Vue.component( 'detail', {
     props: ['detail'],
-    template: '<section>' +
+    template: '<div class="detail">' +
                     '<h4>{{ detail.title }}</h4>' +
                     '<div v-html="detail.body"></div>' +
-                '</section>',
+                '</div>',
     data: function() {
         return {};
     }

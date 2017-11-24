@@ -5,6 +5,7 @@ const gulp = require( 'gulp' ),
     concat = require( 'gulp-concat' ),
     rename = require( 'gulp-rename' ),
     uglify = require( 'gulp-uglify' ),
+    webserver = require( 'gulp-webserver' ),
     sourcemaps = require( 'gulp-sourcemaps' );
 
 gulp.task( 'scss', () => {
@@ -27,7 +28,7 @@ gulp.task( 'js', () => {
             './js/src/app.js'
         ] )
         .pipe( sourcemaps.init() )
-        .pipe( concat( 'learnwithmorsels.github.io.js', {newLine: ';'} ) )
+        .pipe( concat( 'learnwithmorsels.github.io.js', { newLine: ';' } ) )
         .pipe( uglify() )
         .pipe( sourcemaps.write( './' ) )
         .pipe( gulp.dest( './js' ) );
@@ -36,6 +37,12 @@ gulp.task( 'js', () => {
 gulp.task( 'dev', ['default'], () => {
     gulp.watch( './css/src/**/*.scss', ['scss'] );
     gulp.watch( './js/src/**/*.js', ['js'] );
+
+    gulp.src( './' )
+        .pipe( webserver( {
+            livereload: true,
+            port: 8080
+        } ) );
 } );
 
 gulp.task( 'default', ['scss', 'js'] );

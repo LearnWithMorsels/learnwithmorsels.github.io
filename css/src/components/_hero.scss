@@ -1,0 +1,12 @@
+.hero {
+  height: 100vh;
+
+  @include flexbox;
+  justify-content: center;
+  align-items: center;
+
+  color: #FFF;
+
+  background: $primary-colour;
+  background: linear-gradient(135deg, darken($primary-colour, 20) 0%, $primary-colour 100%);
+}

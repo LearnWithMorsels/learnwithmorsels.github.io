@@ -1,10 +1,11 @@
 new Vue( {
     el: '#app',
     template: '<div>' +
-                    '<navigation :content="nav"></navigation>' +
                     '<hero :content="content.hero"></hero>' +
+                    '<navigation :content="nav"></navigation>' +
                     '<features id="features" :features="content.features"></features>' +
                     '<detail-list id="details" :details="content.details"></detail-list>' +
+                    '<foot></foot>' +
                 '</div>',
     data: {
         nav: [

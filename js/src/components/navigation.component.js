@@ -1,8 +1,10 @@
 Vue.component( 'navigation', {
     props: ['content'],
     template: '<nav class="site-navigation">' +
-                    '<a v-for="item in content"' +
-                        ' :href="itemLink(item)">{{ item.title }}</a>' +
+                    '<section>' +
+                        '<a v-for="item in content"' +
+                            ' :href="itemLink(item)"">{{ item.title }}</a>' +
+                    '</section>' +
                 '</nav>',
     data: function() {
         return {

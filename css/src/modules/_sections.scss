@@ -1,5 +1,11 @@
 section {
-  &[id] {
-    padding-top: 30px;
-  }
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 48px;
+
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+
+  @include flexbox-vertical;
 }
