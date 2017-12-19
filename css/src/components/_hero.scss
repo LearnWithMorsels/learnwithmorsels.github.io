@@ -1,12 +1,41 @@
 .hero {
-  height: 100vh;
+  padding-top: 60px;
+  padding-bottom: 60px;
 
   @include flexbox;
   justify-content: center;
   align-items: center;
 
+  position: relative;
+
   color: #FFF;
 
-  background: $primary-colour;
-  background: linear-gradient(135deg, darken($primary-colour, 20) 0%, $primary-colour 100%);
+  background: url("/images/wave.svg") bottom no-repeat;
+  background-size: 105% auto;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+
+    background: $primary-colour;
+    background: linear-gradient(135deg, darken($primary-colour, 20) 0%, $primary-colour 100%);
+
+    content: "";
+  }
+
+  .card {
+    padding: 30px;
+
+    color: $base-font-colour;
+
+    background-color: #FFF;
+
+    border-radius: 2px;
+
+    @include shadow-2;
+  }
 }

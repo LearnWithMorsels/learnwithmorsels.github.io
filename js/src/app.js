@@ -1,8 +1,8 @@
 new Vue( {
     el: '#app',
     template: '<div>' +
-                    '<hero :content="content.hero"></hero>' +
                     '<navigation :content="nav"></navigation>' +
+                    '<hero :content="content.hero"></hero>' +
                     '<features id="features" :features="content.features"></features>' +
                     '<detail-list id="details" :details="content.details"></detail-list>' +
                     '<foot></foot>' +
@@ -24,7 +24,7 @@ new Vue( {
         ],
         content: {
             hero: {
-                header: 'Welcome to Morsels!',
+                header: 'Bitesize elearning',
                 subheader: 'A new approach to learning'
             },
             features: [

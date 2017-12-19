@@ -1,0 +1,44 @@
+.container {
+  max-width: 100%;
+  width: 1260px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: ($gutter / 2);
+  padding-left: ($gutter / 2);
+
+  box-sizing: border-box;
+
+  @include flexbox;
+  flex-wrap: wrap;
+  justify-content: stretch;
+  align-items: stretch;
+}
+
+.column {
+  padding-right: ($gutter / 2);
+  padding-left: ($gutter / 2);
+
+  box-sizing: border-box;
+
+  &.full {
+    width: 100%;
+  }
+}
+
+@for $i from 0 through 3 {
+  .flex-#{$i} {
+    @include flex($i 0);
+  }
+}
+
+@for $i from 2 through 6 {
+  .width-#{floor(100 / $i)} {
+    //width: (100% / $i);
+  }
+
+  @for $j from 1 through $i - 1 {
+    .width-#{$j}-#{$i} {
+      width: ((100% / $i) * $j);
+    }
+  }
+}

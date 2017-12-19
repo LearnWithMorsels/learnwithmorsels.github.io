@@ -11,17 +11,17 @@
   @include flexbox-core;
 }
 
+@mixin inline-flexbox() {
+  display: -moz-inline-flex;
+  display: -webkit-inline-flex;
+  display: inline-flex;
+}
+
 @mixin flexbox-vertical() {
   @include flexbox-core;
   -ms-box-orient: vertical;
   -ms-flex-direction: column;
   flex-direction: column;
-}
-
-@mixin inline-flexbox() {
-  display: -moz-inline-flex;
-  display: -webkit-inline-flex;
-  display: inline-flex;
 }
 
 @mixin flex($values) {

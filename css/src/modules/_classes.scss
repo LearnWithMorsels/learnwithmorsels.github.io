@@ -1,0 +1,132 @@
+.flexbox {
+  @include flexbox;
+}
+
+.flexbox-vertical {
+  @include flexbox-vertical;
+}
+
+.inline-flexbox {
+  @include inline-flexbox;
+}
+
+.flex-align-center {
+  align-items: center !important;
+}
+
+.flex-space-between {
+  justify-content: space-between !important;
+}
+
+.flex-justify-center {
+  justify-content: center !important;
+}
+
+.flex-justify-end {
+  justify-content: flex-end !important;
+}
+
+.align-center {
+  text-align: center !important;
+}
+
+.white-text-colour {
+  color: #FFF !important;
+}
+
+.primary-text-colour {
+  color: $primary-colour !important;
+}
+
+.primary-background-colour {
+  background-color: $primary-colour !important;
+}
+
+.transition-background-colour {
+  transition: background-color 400ms;
+
+  &:hover {
+    transition: background-color 100ms;
+  }
+}
+
+.transition-text-colour {
+  transition: color 400ms;
+
+  &:hover {
+    transition: color 100ms;
+  }
+}
+
+.transition-all-colours {
+  transition: color 400ms, background-color 400ms, border-color 400ms;
+
+  &:hover {
+    transition: color 100ms, background-color 100ms, border-color 100ms;
+  }
+}
+
+.hidden {
+  display: none !important;
+}
+
+@for $i from 1 through 3 {
+  .flex-order-#{$i} {
+    @include flex-order($i);
+  }
+}
+
+@media (max-width: $largest-small-device) {
+  .hide-on-small {
+    display: none !important;
+  }
+
+  [class^="flex-order-"],
+  [class*=" flex-order-"] {
+    @include flex-order(1);
+  }
+}
+
+@media (min-width: ($largest-small-device + 1px)) and (max-width: $largest-medium-device) {
+  .hide-on-medium {
+    display: none !important;
+  }
+}
+
+@media (min-width: $largest-medium-device + 1px) {
+  .hide-on-large {
+    display: none !important;
+  }
+}
+
+.shadow-0 {
+  @include shadow-0;
+}
+
+.shadow-2 {
+  @include shadow-2;
+}
+
+.shadow-3 {
+  @include shadow-3;
+}
+
+.shadow-4 {
+  @include shadow-4;
+}
+
+.shadow-6 {
+  @include shadow-6;
+}
+
+.shadow-8 {
+  @include shadow-8;
+}
+
+.shadow-16 {
+  @include shadow-16;
+}
+
+.shadow-24 {
+  @include shadow-24;
+}

@@ -1,0 +1,46 @@
+body {
+  color: $base-font-colour;
+  font-family: $base-font-family;
+  font-size: $base-font-size-large;
+  line-height: $base-line-height-large;
+  font-weight: $base-font-weight;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+}
+
+ul,
+ol {
+  padding-left: 2em;
+
+  list-style-position: outside;
+}
+
+li,
+dt {
+  padding-top: 0.5em;
+
+  &:first-child {
+    padding-top: 0;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol {
+  + * {
+    margin-top: 1em;
+  }
+}

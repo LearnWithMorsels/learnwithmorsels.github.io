@@ -1,0 +1,32 @@
+a.button {
+  padding: 8px 24px;
+
+  display: inline-block;
+
+  color: #FFF;
+  text-decoration: none;
+
+  background-color: $primary-colour;
+
+  border-radius: 100px;
+
+  transition: background-color $transition-out;
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: darken($primary-colour, 10);
+
+    transition: background-color $transition-in;
+  }
+
+  &.inverted {
+    color: $base-font-colour;
+
+    background-color: #FFF;
+
+    &:hover {
+      background-color: darken(#FFF, 10);
+    }
+  }
+}

@@ -1,14 +1,26 @@
 @charset "UTF-8";
 
-$primary-colour: #009688;
-
 @import url("https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Material+Icons");
 
-@import "utils/mixins";
-
+@import "modules/vars";
+@import "modules/mixins";
 @import "modules/reset";
 @import "modules/sections";
-@import "modules/typography";
+@import "modules/classes";
+@import "modules/buttons";
+
+@import "elements/grid";
+@import "elements/typography";
+
+@media (min-width: ($largest-small-device + 1px)) and (max-width: $largest-medium-device) {
+  @import "elements/medium/grid";
+  @import "elements/medium/typography";
+}
+
+@media (max-width: $largest-small-device) {
+  @import "elements/small/grid";
+  @import "elements/small/typography";
+}
 
 @import "components/navigation";
 @import "components/hero";

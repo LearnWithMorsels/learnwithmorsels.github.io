@@ -1,0 +1,22 @@
+[class^="width-"],
+[class*=" width-"] {
+  @include flex(none);
+}
+
+@for $i from 0 through 3 {
+  .flex-#{$i}-medium {
+    @include flex($i 0);
+  }
+}
+
+@for $i from 2 through 6 {
+  .width-#{floor(100 / $i)}-medium {
+    //width: (100% / $i);
+  }
+
+  @for $j from 1 through $i - 1 {
+    .width-#{$j}-#{$i}-medium {
+      width: ((100% / $i) * $j);
+    }
+  }
+}

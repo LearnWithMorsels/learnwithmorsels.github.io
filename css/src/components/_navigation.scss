@@ -1,6 +1,4 @@
 .site-navigation {
-  margin-bottom: 60px;
-
   position: sticky;
   top: 0;
 
@@ -8,16 +6,7 @@
 
   z-index: 2;
 
-  section {
-    -ms-box-orient: horizontal;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    justify-content: flex-end;
-  }
-
   a {
-    margin-left: 30px;
-
     display: inline-block;
 
     color: #FFF;
