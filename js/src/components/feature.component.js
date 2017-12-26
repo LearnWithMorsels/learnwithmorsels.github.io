@@ -15,12 +15,12 @@ Vue.component( 'feature', {
         image: {
           column: true,
           'flex-1': true,
-          'flex-order-2': this.flipped
+          'flex-order-2': !this.flipped
         },
         text: {
           column: true,
           'flex-2': true,
-          'flex-order-1': this.flipped
+          'flex-order-1': !this.flipped
         }
       }
     };
